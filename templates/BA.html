@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+<title>DrkWizardSoftware</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin:10;
+}
+
+/*header */
+.header {
+  color: white;
+  background-color: black;
+  padding: 20px;
+  text-align: left;
+}
+
+/* Header 1 */
+.header1 {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* text */
+.text {
+  color: black;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+
+/*navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: grey;
+}
+
+/*topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration : none;
+}
+
+/* Change color on links */
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+input[type=number], select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+    input[type=radio], select {
+        width: 20%;
+        padding: 12px 20px;
+        margin: 0 10px 0 10px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <image src="{{url_for('static',filename = 'LOGO.png')}}" width="200" height="150" align="left" >
+  <h1>Admission Predictor</h1>
+  <p>-DrkWizard<br>
+</div>
+
+<div class="topnav">
+
+</div>
+
+<div class= "header1">
+</div>
+<div class="text">
+<h2>Enter Details Below</h2>
+<br>
+
+<form action="/predict/" method="POST">
+    <label for="grescore">GRE Score(out of 340)</label><br>
+    <input type="number" id="grescore" name="grescore" placeholder="GRE Score" min='0' max='340' required>
+    <br><br>
+
+    <label for="toeflscore">TOEFL Score(out of 120)</label><br>
+    <input type="number" id="toeflscore" name="toeflscore" placeholder="TOEFL Score" min='0' max='120' required>
+    <br><br>
+
+    <label for="SOP">Statement of Purpose Strength(1-5)</label><br>
+    <input type="number" id="SOP" name="SOP" placeholder="SOP strength" min='0' max='5' required>
+    <br><br>
+
+    <label for="LOR">Letter of Recomendation Strength(1-5)</label><br>
+    <input type="number" id="LOR" name="LOR" placeholder="LOR strength" min='0' max='5' required>
+    <br><br>
+
+    <label for="CGPA">Udergarduate CGPA(1-10)</label><br>
+    <input type="number" id="CGPA" name="CGPA" placeholder="CGPA" min='0' max='10' required>
+    <br><br>
+
+    <label for="RE">Research Experience</label><br>
+    <input type="radio" id="opt1" name="opt" value="Yes">Yes
+    <input type="radio" id="opt2" name="opt" value="No">No
+    <br><br>
+    <input type="submit" value="Predict">
+</form>
+</div>
+
+</body>
+</html>

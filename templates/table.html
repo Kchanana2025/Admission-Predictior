@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<style>
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: grey;
+    }
+        /*topnav links */
+        .topnav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+
+</style>
+<title> PredictionResult</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div class="topnav">
+       <p> <a href={{ url_for('home') }}>home</a></p>
+
+    </div>
+
+    {% for table in tables %}
+
+    {{ table|safe }}
+    {% endfor %}
+</body>
+</html>
